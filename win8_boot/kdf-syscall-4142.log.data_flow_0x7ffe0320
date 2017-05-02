@@ -1,0 +1,45 @@
+----------------------------START ANALYZING KDF, ADDRESS: 0x7ffe0320
+299: 0xfffff9600021be3d mov rax, qword ptr [rax]
+    READ: VA = 0x7ffe0320, LA = 0x7ffe0320, PA1 = 0x221320, SIZE = 0x8, DATA = 0x00000039a
+------Adding data-flow dependency: rax
+300: 0xfffff9600021be40 mov ecx, dword ptr [0x7ffe0004]
+    READ: VA = 0x7ffe0004, LA = 0x7ffe0004, PA1 = 0x221004, SIZE = 0x4, DATA = 0xf99a027
+301: 0xfffff9600021be47 imul rcx, rax
+------Data-flow dependency originated from line 299 is used: rax
+302: 0xfffff9600021be4b shr rcx, 0x18
+303: 0xfffff9600021be4f mov qword ptr [rsp+0x30], rcx
+    WRITE: VA = 0xfffff88004093b50, LA = 0xfffff88004093b50, PA1 = 0x1fb4fb50, SIZE = 0x8, DATA = 0x000000382f
+304: 0xfffff9600021be54 mov rax, qword ptr [rbp+0x168]
+------Removing data-flow dependency: rax
+662: 0xfffff96000238057 mov rax, qword ptr [rax]
+    READ: VA = 0x7ffe0320, LA = 0x7ffe0320, PA1 = 0x221320, SIZE = 0x8, DATA = 0x00000039a
+------Adding data-flow dependency: rax
+663: 0xfffff9600023805a mov ecx, dword ptr [0x7ffe0004]
+    READ: VA = 0x7ffe0004, LA = 0x7ffe0004, PA1 = 0x221004, SIZE = 0x4, DATA = 0xf99a027
+664: 0xfffff96000238061 imul rcx, rax
+------Data-flow dependency originated from line 662 is used: rax
+665: 0xfffff96000238065 shr rcx, 0x18
+666: 0xfffff96000238069 mov dword ptr [rbx+0x30], ecx
+    WRITE: VA = 0xfffff9010063bfa0, LA = 0xfffff9010063bfa0, PA1 = 0x20676fa0, SIZE = 0x4, DATA = 0x00382f
+667: 0xfffff9600023806c xor ecx, ecx
+668: 0xfffff9600023806e call qword ptr [rip+0x259f44]
+    READ: VA = 0xfffff96000491fb8, LA = 0xfffff96000491fb8, PA1 = 0x1468fb8, SIZE = 0x8, DATA = 0xfffff8364c1fde0
+    WRITE: VA = 0xfffff880040939a8, LA = 0xfffff880040939a8, PA1 = 0x1fb4f9a8, SIZE = 0x8, DATA = 0xfffff9600238074
+669: 0xfffff80364c1fde0 mov r11, rsp
+670: 0xfffff80364c1fde3 mov qword ptr [r11+0x8], rbx
+    WRITE: VA = 0xfffff880040939b0, LA = 0xfffff880040939b0, PA1 = 0x1fb4f9b0, SIZE = 0x8, DATA = 0xfffff91063bf70
+671: 0xfffff80364c1fde7 mov qword ptr [r11+0x18], rsi
+    WRITE: VA = 0xfffff880040939c0, LA = 0xfffff880040939c0, PA1 = 0x1fb4f9c0, SIZE = 0x8, DATA = 0x00000000
+672: 0xfffff80364c1fdeb mov qword ptr [r11+0x20], rdi
+    WRITE: VA = 0xfffff880040939c8, LA = 0xfffff880040939c8, PA1 = 0x1fb4f9c8, SIZE = 0x8, DATA = 0x00000000
+673: 0xfffff80364c1fdef push r14
+    WRITE: VA = 0xfffff880040939a0, LA = 0xfffff880040939a0, PA1 = 0x1fb4f9a0, SIZE = 0x8, DATA = 0x00000000
+674: 0xfffff80364c1fdf1 sub rsp, 0x20
+675: 0xfffff80364c1fdf5 mov rsi, qword ptr [rip+0x23c44]
+    READ: VA = 0xfffff80364c43a40, LA = 0xfffff80364c43a40, PA1 = 0x1c43a40, SIZE = 0x8, DATA = 0xffffffffffd0100
+676: 0xfffff80364c1fdfc mov r14, rcx
+677: 0xfffff80364c1fdff cmp dword ptr [rsi+0xec], 0x5
+    READ: VA = 0xffffffffffd010ec, LA = 0xffffffffffd010ec, PA1 = 0x1030ec, SIZE = 0x4, DATA = 0x0005
+678: 0xfffff80364c1fe06 mov rax, qword ptr [rsi+0xc8]
+------Removing data-flow dependency: rax
+----------------------------STOP ANALYZING KDF, ADDRESS: 0x7ffe0320

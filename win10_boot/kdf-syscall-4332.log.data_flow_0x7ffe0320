@@ -1,0 +1,36 @@
+----------------------------START ANALYZING KDF, ADDRESS: 0x7ffe0320
+388: 0xfffff9602a451344 mov rax, qword ptr [rax]
+    READ: VA = 0x7ffe0320, LA = 0x7ffe0320, PA1 = 0x321320, SIZE = 0x8, DATA = 0x0000002fa
+------Adding data-flow dependency: rax
+389: 0xfffff9602a451347 mov ecx, dword ptr [0x7ffe0004]
+    READ: VA = 0x7ffe0004, LA = 0x7ffe0004, PA1 = 0x321004, SIZE = 0x4, DATA = 0xfa000
+390: 0xfffff9602a45134e imul rcx, rax
+------Data-flow dependency originated from line 388 is used: rax
+391: 0xfffff9602a451352 shr rcx, 0x18
+392: 0xfffff9602a451356 mov rax, qword ptr [rdi+0x188]
+------Removing data-flow dependency: rax
+438: 0xfffff9602a427970 mov rax, qword ptr [rax]
+    READ: VA = 0x7ffe0320, LA = 0x7ffe0320, PA1 = 0x321320, SIZE = 0x8, DATA = 0x0000002fa
+------Adding data-flow dependency: rax
+439: 0xfffff9602a427973 mov r10d, dword ptr [0x7ffe0004]
+    READ: VA = 0x7ffe0004, LA = 0x7ffe0004, PA1 = 0x321004, SIZE = 0x4, DATA = 0xfa000
+440: 0xfffff9602a42797b imul r10, rax
+------Data-flow dependency originated from line 438 is used: rax
+441: 0xfffff9602a42797f shr r10, 0x18
+442: 0xfffff9602a427983 test rcx, rcx
+443: 0xfffff9602a427986 jz 0x41
+444: 0xfffff9602a4279c7 mov rcx, qword ptr [rip+0x2cfc2a]
+    READ: VA = 0xfffff9602a6f75f8, LA = 0xfffff9602a6f75f8, PA1 = 0x217465f8, SIZE = 0x8, DATA = 0xfffff9140742c60
+445: 0xfffff9602a4279ce xor edx, edx
+446: 0xfffff9602a4279d0 lea r8, ptr [rip+0x2cfc21]
+447: 0xfffff9602a4279d7 mov dword ptr [rip+0x2d2f33], edx
+    WRITE: VA = 0xfffff9602a6fa910, LA = 0xfffff9602a6fa910, PA1 = 0x7b6c3910, SIZE = 0x4, DATA = 0x0000
+448: 0xfffff9602a4279dd test rcx, rcx
+449: 0xfffff9602a4279e0 jz 0x4a
+450: 0xfffff9602a4279e2 mov r9d, dword ptr [rcx+0xc]
+    READ: VA = 0xfffff90140742c6c, LA = 0xfffff90140742c6c, PA1 = 0x2399bc6c, SIZE = 0x4, DATA = 0x104c030
+451: 0xfffff9602a4279e6 test r9b, 0x4
+452: 0xfffff9602a4279ea jz 0x26
+453: 0xfffff9602a427a10 mov rax, qword ptr [rcx+0x20]
+------Removing data-flow dependency: rax
+----------------------------STOP ANALYZING KDF, ADDRESS: 0x7ffe0320

@@ -1,0 +1,593 @@
+----------------------------START ANALYZING KDF, ADDRESS: 0xb949bee728
+115: 0xfffff8036507002f mov rax, qword ptr [r10+0x28]
+    READ: VA = 0xb949bee728, LA = 0xb949bee728, PA1 = 0x18f8728, SIZE = 0x8, DATA = 0x000b949bee730
+------Adding data-flow dependency: rax
+116: 0xfffff80365070033 mov qword ptr [rsp+0x40], rax
+    WRITE: VA = 0xfffff880032f6d50, LA = 0xfffff880032f6d50, PA1 = 0x1adbd50, SIZE = 0x8, DATA = 0x000b949bee730
+------Adding data-flow dependency: 0xfffff880032f6d50
+117: 0xfffff80365070038 mov rcx, rax
+118: 0xfffff8036507003b test rax, rax
+------Data-flow dependency originated from line 115 is used: rax
+119: 0xfffff8036507003e jz 0x5f
+120: 0xfffff80365070040 test cl, 0x3
+121: 0xfffff80365070043 jnz 0x4d
+122: 0xfffff80365070045 mov rax, qword ptr [rip-0xab04c]
+------Removing data-flow dependency: rax
+    READ: VA = 0xfffff80364fc5000, LA = 0xfffff80364fc5000, PA1 = 0x1fc5000, SIZE = 0x8, DATA = 0x007ffffff00
+123: 0xfffff8036507004c cmp rcx, rax
+124: 0xfffff8036507004f cmovnb rcx, rax
+125: 0xfffff80365070053 mov al, byte ptr [rcx]
+    READ: VA = 0xb949bee730, LA = 0xb949bee730, PA1 = 0x18f8730, SIZE = 0x1, DATA = 0xc
+126: 0xfffff80365070055 mov rax, qword ptr [rsp+0x40]
+    READ: VA = 0xfffff880032f6d50, LA = 0xfffff880032f6d50, PA1 = 0x1adbd50, SIZE = 0x8, DATA = 0x000b949bee730
+------Adding data-flow dependency: rax
+127: 0xfffff8036507005a mov ecx, dword ptr [rax]
+    READ: VA = 0xb949bee730, LA = 0xb949bee730, PA1 = 0x18f8730, SIZE = 0x4, DATA = 0x000c
+128: 0xfffff8036507005c mov dword ptr [rsp+0x38], ecx
+    WRITE: VA = 0xfffff880032f6d48, LA = 0xfffff880032f6d48, PA1 = 0x1adbd48, SIZE = 0x4, DATA = 0x000c
+129: 0xfffff80365070060 cmp ecx, 0xc
+130: 0xfffff80365070063 jnz 0x33
+131: 0xfffff80365070065 mov byte ptr [r8], 0x1
+    WRITE: VA = 0xfffff880032f6d80, LA = 0xfffff880032f6d80, PA1 = 0x1adbd80, SIZE = 0x1, DATA = 0x1
+132: 0xfffff80365070069 mov rcx, qword ptr [rsp+0x40]
+    READ: VA = 0xfffff880032f6d50, LA = 0xfffff880032f6d50, PA1 = 0x1adbd50, SIZE = 0x8, DATA = 0x000b949bee730
+------Adding data-flow dependency: rcx
+133: 0xfffff8036507006e mov eax, dword ptr [rcx]
+    READ: VA = 0xb949bee730, LA = 0xb949bee730, PA1 = 0x18f8730, SIZE = 0x4, DATA = 0x000c
+134: 0xfffff80365070070 mov dword ptr [r9], eax
+    WRITE: VA = 0xfffff880032f6da8, LA = 0xfffff880032f6da8, PA1 = 0x1adbda8, SIZE = 0x4, DATA = 0x000c
+135: 0xfffff80365070073 mov eax, dword ptr [rcx+0x4]
+    READ: VA = 0xb949bee734, LA = 0xb949bee734, PA1 = 0x18f8734, SIZE = 0x4, DATA = 0x0002
+136: 0xfffff80365070076 mov dword ptr [r9+0x4], eax
+    WRITE: VA = 0xfffff880032f6dac, LA = 0xfffff880032f6dac, PA1 = 0x1adbdac, SIZE = 0x4, DATA = 0x0002
+137: 0xfffff8036507007a mov eax, dword ptr [rcx+0x8]
+    READ: VA = 0xb949bee738, LA = 0xb949bee738, PA1 = 0x18f8738, SIZE = 0x4, DATA = 0x49c801
+138: 0xfffff8036507007d mov dword ptr [r9+0x8], eax
+    WRITE: VA = 0xfffff880032f6db0, LA = 0xfffff880032f6db0, PA1 = 0x1adbdb0, SIZE = 0x4, DATA = 0x49c801
+139: 0xfffff80365070081 mov dword ptr [r9], 0xc
+    WRITE: VA = 0xfffff880032f6da8, LA = 0xfffff880032f6da8, PA1 = 0x1adbda8, SIZE = 0x4, DATA = 0x000c
+140: 0xfffff80365070088 jmp 0x15
+141: 0xfffff8036507009d jmp 0x4
+142: 0xfffff803650700a1 cmp byte ptr [r8], r11b
+    READ: VA = 0xfffff880032f6d80, LA = 0xfffff880032f6d80, PA1 = 0x1adbd80, SIZE = 0x1, DATA = 0x1
+143: 0xfffff803650700a4 jz 0x1e
+144: 0xfffff803650700a6 mov al, byte ptr [r9+0x8]
+    READ: VA = 0xfffff880032f6db0, LA = 0xfffff880032f6db0, PA1 = 0x1adbdb0, SIZE = 0x1, DATA = 0x1
+145: 0xfffff803650700aa cmp al, 0x1
+146: 0xfffff803650700ac jnz 0x1d
+147: 0xfffff803650700ae mov eax, dword ptr [r9+0x4]
+    READ: VA = 0xfffff880032f6dac, LA = 0xfffff880032f6dac, PA1 = 0x1adbdac, SIZE = 0x4, DATA = 0x0002
+148: 0xfffff803650700b2 test eax, eax
+149: 0xfffff803650700b4 js 0x49
+150: 0xfffff803650700b6 cmp eax, 0x3
+151: 0xfffff803650700b9 mov eax, r11d
+152: 0xfffff803650700bc jnle 0x41
+153: 0xfffff803650700be test eax, eax
+154: 0xfffff803650700c0 js 0x4
+155: 0xfffff803650700c2 xor eax, eax
+156: 0xfffff803650700c4 add rsp, 0x28
+157: 0xfffff803650700c8 ret 
+    READ: VA = 0xfffff880032f6d38, LA = 0xfffff880032f6d38, PA1 = 0x1adbd38, SIZE = 0x8, DATA = 0xfffff836559f11
+158: 0xfffff80365059f11 test eax, eax
+159: 0xfffff80365059f13 js 0x11c
+160: 0xfffff80365059f19 mov r8, qword ptr [rip+0x297158]
+    READ: VA = 0xfffff803652f1078, LA = 0xfffff803652f1078, PA1 = 0x22f1078, SIZE = 0x8, DATA = 0xfffffa80188cea0
+161: 0xfffff80365059f20 lea rax, ptr [rsp+0x60]
+------Removing data-flow dependency: rax
+162: 0xfffff80365059f25 mov qword ptr [rsp+0x28], rax
+    WRITE: VA = 0xfffff880032f6d68, LA = 0xfffff880032f6d68, PA1 = 0x1adbd68, SIZE = 0x8, DATA = 0xfffff88032f6da0
+163: 0xfffff80365059f2a lea rax, ptr [rsp+0x48]
+164: 0xfffff80365059f2f mov qword ptr [rsp+0x20], rax
+    WRITE: VA = 0xfffff880032f6d60, LA = 0xfffff880032f6d60, PA1 = 0x1adbd60, SIZE = 0x8, DATA = 0xfffff88032f6d88
+165: 0xfffff80365059f34 mov r9b, dil
+166: 0xfffff80365059f37 mov edx, 0x2
+167: 0xfffff80365059f3c mov rcx, rsi
+------Removing data-flow dependency: rcx
+168: 0xfffff80365059f3f call 0x5af01
+    WRITE: VA = 0xfffff880032f6d38, LA = 0xfffff880032f6d38, PA1 = 0x1adbd38, SIZE = 0x8, DATA = 0xfffff836559f44
+169: 0xfffff803650b4e40 sub rsp, 0x48
+170: 0xfffff803650b4e44 mov rax, qword ptr [rsp+0x78]
+    READ: VA = 0xfffff880032f6d68, LA = 0xfffff880032f6d68, PA1 = 0x1adbd68, SIZE = 0x8, DATA = 0xfffff88032f6da0
+171: 0xfffff803650b4e49 mov qword ptr [rsp+0x30], rax
+    WRITE: VA = 0xfffff880032f6d20, LA = 0xfffff880032f6d20, PA1 = 0x1adbd20, SIZE = 0x8, DATA = 0xfffff88032f6da0
+172: 0xfffff803650b4e4e mov rax, qword ptr [rsp+0x70]
+    READ: VA = 0xfffff880032f6d60, LA = 0xfffff880032f6d60, PA1 = 0x1adbd60, SIZE = 0x8, DATA = 0xfffff88032f6d88
+173: 0xfffff803650b4e53 mov qword ptr [rsp+0x28], rax
+    WRITE: VA = 0xfffff880032f6d18, LA = 0xfffff880032f6d18, PA1 = 0x1adbd18, SIZE = 0x8, DATA = 0xfffff88032f6d88
+174: 0xfffff803650b4e58 mov dword ptr [rsp+0x20], 0x746c6644
+    WRITE: VA = 0xfffff880032f6d10, LA = 0xfffff880032f6d10, PA1 = 0x1adbd10, SIZE = 0x4, DATA = 0x746c6644
+175: 0xfffff803650b4e60 call 0xfffffffffffff9f0
+    WRITE: VA = 0xfffff880032f6ce8, LA = 0xfffff880032f6ce8, PA1 = 0x1adbce8, SIZE = 0x8, DATA = 0xfffff8365b4e65
+176: 0xfffff803650b4850 mov byte ptr [rsp+0x20], r9b
+    WRITE: VA = 0xfffff880032f6d08, LA = 0xfffff880032f6d08, PA1 = 0x1adbd08, SIZE = 0x1, DATA = 0x1
+177: 0xfffff803650b4855 mov qword ptr [rsp+0x18], r8
+    WRITE: VA = 0xfffff880032f6d00, LA = 0xfffff880032f6d00, PA1 = 0x1adbd00, SIZE = 0x8, DATA = 0xfffffa80188cea0
+178: 0xfffff803650b485a mov dword ptr [rsp+0x10], edx
+    WRITE: VA = 0xfffff880032f6cf8, LA = 0xfffff880032f6cf8, PA1 = 0x1adbcf8, SIZE = 0x4, DATA = 0x0002
+179: 0xfffff803650b485e push rbx
+    WRITE: VA = 0xfffff880032f6ce0, LA = 0xfffff880032f6ce0, PA1 = 0x1adbce0, SIZE = 0x8, DATA = 0x0000000c
+180: 0xfffff803650b485f push rbp
+    WRITE: VA = 0xfffff880032f6cd8, LA = 0xfffff880032f6cd8, PA1 = 0x1adbcd8, SIZE = 0x8, DATA = 0xfffff88032f6ec0
+181: 0xfffff803650b4860 push rsi
+    WRITE: VA = 0xfffff880032f6cd0, LA = 0xfffff880032f6cd0, PA1 = 0x1adbcd0, SIZE = 0x8, DATA = 0x00000007c
+182: 0xfffff803650b4861 push rdi
+    WRITE: VA = 0xfffff880032f6cc8, LA = 0xfffff880032f6cc8, PA1 = 0x1adbcc8, SIZE = 0x8, DATA = 0xfffff88032f6d1
+183: 0xfffff803650b4862 push r12
+    WRITE: VA = 0xfffff880032f6cc0, LA = 0xfffff880032f6cc0, PA1 = 0x1adbcc0, SIZE = 0x8, DATA = 0x00000000
+184: 0xfffff803650b4864 push r13
+    WRITE: VA = 0xfffff880032f6cb8, LA = 0xfffff880032f6cb8, PA1 = 0x1adbcb8, SIZE = 0x8, DATA = 0x00000000
+185: 0xfffff803650b4866 push r14
+    WRITE: VA = 0xfffff880032f6cb0, LA = 0xfffff880032f6cb0, PA1 = 0x1adbcb0, SIZE = 0x8, DATA = 0x000b949bee70
+186: 0xfffff803650b4868 push r15
+    WRITE: VA = 0xfffff880032f6ca8, LA = 0xfffff880032f6ca8, PA1 = 0x1adbca8, SIZE = 0x8, DATA = 0x000b949bee80
+187: 0xfffff803650b486a sub rsp, 0x48
+188: 0xfffff803650b486e mov rdi, qword ptr gs:[0x188]
+    READ: VA = 0x188, LA = 0xfffff80364f65188, PA1 = 0x1f65188, SIZE = 0x8, DATA = 0xfffffa801932740
+189: 0xfffff803650b4877 xor esi, esi
+190: 0xfffff803650b4879 mov r12, rcx
+191: 0xfffff803650b487c mov rcx, qword ptr [rsp+0xb8]
+    READ: VA = 0xfffff880032f6d18, LA = 0xfffff880032f6d18, PA1 = 0x1adbd18, SIZE = 0x8, DATA = 0xfffff88032f6d88
+192: 0xfffff803650b4884 mov r13, qword ptr [rdi+0xb8]
+    READ: VA = 0xfffffa80019327f8, LA = 0xfffffa80019327f8, PA1 = 0x7e5327f8, SIZE = 0x8, DATA = 0xfffffa80192b080
+193: 0xfffff803650b488b movzx ebx, r9b
+194: 0xfffff803650b488f mov rax, r8
+195: 0xfffff803650b4892 mov byte ptr [rsp+0x90], sil
+    WRITE: VA = 0xfffff880032f6cf0, LA = 0xfffff880032f6cf0, PA1 = 0x1adbcf0, SIZE = 0x1, DATA = 0x0
+196: 0xfffff803650b489a mov qword ptr [rcx], rsi
+    WRITE: VA = 0xfffff880032f6d88, LA = 0xfffff880032f6d88, PA1 = 0x1adbd88, SIZE = 0x8, DATA = 0x00000000
+197: 0xfffff803650b489d test r12d, r12d
+198: 0xfffff803650b48a0 js 0x1b0
+199: 0xfffff803650b48a6 cmp qword ptr [rip-0x1b01bd], rsi
+    READ: VA = 0xfffff80364f046f0, LA = 0xfffff80364f046f0, PA1 = 0x1f046f0, SIZE = 0x8, DATA = 0x00000000
+200: 0xfffff803650b48ad jnz 0x1bb2f8
+201: 0xfffff803650b48b3 dec word ptr [rdi+0x1e4]
+    RWI: VA = 0xfffffa8001932924, LA = 0xfffffa8001932924, PA1 = 0x7e532924, SIZE = 0x2, DATA = 0x00
+    WRITE: VA = 0xfffffa8001932924, LA = 0xfffffa8001932924, PA1 = 0x7e532924, SIZE = 0x2, DATA = 0xffff
+202: 0xfffff803650b48ba cmp r13, qword ptr [rdi+0x220]
+    READ: VA = 0xfffffa8001932960, LA = 0xfffffa8001932960, PA1 = 0x7e532960, SIZE = 0x8, DATA = 0xfffffa80192b080
+203: 0xfffff803650b48c1 jnz 0x435
+204: 0xfffff803650b48c7 mov r15, qword ptr [r13+0x408]
+    READ: VA = 0xfffffa800192b488, LA = 0xfffffa800192b488, PA1 = 0x7e52b488, SIZE = 0x8, DATA = 0xfffff8a05a9ae80
+205: 0xfffff803650b48ce test r15, r15
+206: 0xfffff803650b48d1 jz 0x334
+207: 0xfffff803650b48d7 cmp r15, qword ptr [rip-0x1ad786]
+    READ: VA = 0xfffff80364f07158, LA = 0xfffff80364f07158, PA1 = 0x1f07158, SIZE = 0x8, DATA = 0xfffff8a000300
+208: 0xfffff803650b48de jz 0x3e8
+209: 0xfffff803650b48e4 test r12d, 0x3fc
+210: 0xfffff803650b48eb jz 0x3d2
+211: 0xfffff803650b48f1 mov rdx, r12
+212: 0xfffff803650b48f4 mov rcx, r15
+213: 0xfffff803650b48f7 call 0x4d9
+    WRITE: VA = 0xfffff880032f6c58, LA = 0xfffff880032f6c58, PA1 = 0x1adbc58, SIZE = 0x8, DATA = 0xfffff8365b48fc
+214: 0xfffff803650b4dd0 mov eax, dword ptr [rcx]
+    READ: VA = 0xfffff8a005a9ae80, LA = 0xfffff8a005a9ae80, PA1 = 0x17bce80, SIZE = 0x4, DATA = 0x0040
+215: 0xfffff803650b4dd2 and rdx, 0xfffffffffffffffc
+216: 0xfffff803650b4dd6 cmp rdx, rax
+217: 0xfffff803650b4dd9 jnb 0x2e
+218: 0xfffff803650b4ddb mov r8, qword ptr [rcx+0x8]
+    READ: VA = 0xfffff8a005a9ae88, LA = 0xfffff8a005a9ae88, PA1 = 0x17bce88, SIZE = 0x8, DATA = 0xfffff8a05bc900
+219: 0xfffff803650b4ddf mov eax, r8d
+220: 0xfffff803650b4de2 and eax, 0x3
+221: 0xfffff803650b4de5 jnz 0x7
+222: 0xfffff803650b4de7 lea rax, ptr [r8+rdx*4]
+223: 0xfffff803650b4deb ret 
+    READ: VA = 0xfffff880032f6c58, LA = 0xfffff880032f6c58, PA1 = 0x1adbc58, SIZE = 0x8, DATA = 0xfffff8365b48fc
+224: 0xfffff803650b48fc mov r14, rax
+225: 0xfffff803650b48ff test rax, rax
+226: 0xfffff803650b4902 jz 0x3bb
+227: 0xfffff803650b4908 prefetchw zmmword ptr [rax]
+228: 0xfffff803650b490b mov rcx, qword ptr [rax]
+    READ: VA = 0xfffff8a005bc91f0, LA = 0xfffff8a005bc91f0, PA1 = 0x193d1f0, SIZE = 0x8, DATA = 0xc502d4d18001
+229: 0xfffff803650b490e mov rbp, qword ptr [rax+0x8]
+    READ: VA = 0xfffff8a005bc91f8, LA = 0xfffff8a005bc91f8, PA1 = 0x193d1f8, SIZE = 0x8, DATA = 0x0005000a
+230: 0xfffff803650b4912 mov qword ptr [rsp+0x38], rbp
+    WRITE: VA = 0xfffff880032f6c98, LA = 0xfffff880032f6c98, PA1 = 0x1adbc98, SIZE = 0x8, DATA = 0x0005000a
+231: 0xfffff803650b4917 mov qword ptr [rsp+0x30], rcx
+    WRITE: VA = 0xfffff880032f6c90, LA = 0xfffff880032f6c90, PA1 = 0x1adbc90, SIZE = 0x8, DATA = 0xc502d4d18001
+232: 0xfffff803650b491c mov rsi, qword ptr [rsp+0x30]
+    READ: VA = 0xfffff880032f6c90, LA = 0xfffff880032f6c90, PA1 = 0x1adbc90, SIZE = 0x8, DATA = 0xc502d4d18001
+233: 0xfffff803650b4921 test rsi, 0xffffe
+234: 0xfffff803650b4928 jz 0x195
+235: 0xfffff803650b4abd prefetchw zmmword ptr [r14]
+236: 0xfffff803650b4ac1 mov r8, qword ptr [r14]
+    READ: VA = 0xfffff8a005bc91f0, LA = 0xfffff8a005bc91f0, PA1 = 0x193d1f0, SIZE = 0x8, DATA = 0xc502d4d18001
+237: 0xfffff803650b4ac4 test r8b, 0x1
+238: 0xfffff803650b4ac8 jz 0x1f0
+239: 0xfffff803650b4ace lea rcx, ptr [r8-0x1]
+240: 0xfffff803650b4ad2 mov rax, r8
+241: 0xfffff803650b4ad5 lock cmpxchg qword ptr [r14], rcx
+    RWI: VA = 0xfffff8a005bc91f0, LA = 0xfffff8a005bc91f0, PA1 = 0x193d1f0, SIZE = 0x8, DATA = 0xc502d4d18001
+    WRITE: VA = 0xfffff8a005bc91f0, LA = 0xfffff8a005bc91f0, PA1 = 0x193d1f0, SIZE = 0x8, DATA = 0xc502d4d18000
+242: 0xfffff803650b4ada jnz 0xffffffffffffffe3
+243: 0xfffff803650b4adc mov rax, qword ptr [r14]
+    READ: VA = 0xfffff8a005bc91f0, LA = 0xfffff8a005bc91f0, PA1 = 0x193d1f0, SIZE = 0x8, DATA = 0xc502d4d18000
+244: 0xfffff803650b4adf mov rbx, qword ptr [r14]
+    READ: VA = 0xfffff8a005bc91f0, LA = 0xfffff8a005bc91f0, PA1 = 0x193d1f0, SIZE = 0x8, DATA = 0xc502d4d18000
+245: 0xfffff803650b4ae2 mov rcx, r14
+246: 0xfffff803650b4ae5 mov qword ptr [rsp+0x30], rax
+    WRITE: VA = 0xfffff880032f6c90, LA = 0xfffff880032f6c90, PA1 = 0x1adbc90, SIZE = 0x8, DATA = 0xc502d4d18000
+247: 0xfffff803650b4aea mov rax, qword ptr [r14+0x8]
+    READ: VA = 0xfffff8a005bc91f8, LA = 0xfffff8a005bc91f8, PA1 = 0x193d1f8, SIZE = 0x8, DATA = 0x0005000a
+248: 0xfffff803650b4aee sar rbx, 0x13
+249: 0xfffff803650b4af2 mov qword ptr [rsp+0x38], rax
+    WRITE: VA = 0xfffff880032f6c98, LA = 0xfffff880032f6c98, PA1 = 0x1adbc98, SIZE = 0x8, DATA = 0x0005000a
+250: 0xfffff803650b4af7 and rbx, 0xfffffffffffffff0
+251: 0xfffff803650b4afb call 0xffffffffffc76af5
+    WRITE: VA = 0xfffff880032f6c58, LA = 0xfffff880032f6c58, PA1 = 0x1adbc58, SIZE = 0x8, DATA = 0xfffff8365b4b0
+252: 0xfffff80364d2b5f0 test dword ptr [rip+0x299a4e], 0x100000
+    READ: VA = 0xfffff80364fc5048, LA = 0xfffff80364fc5048, PA1 = 0x1fc5048, SIZE = 0x4, DATA = 0xbd193ffe
+253: 0xfffff80364d2b5fa mov r9, rcx
+254: 0xfffff80364d2b5fd jz 0x40
+255: 0xfffff80364d2b5ff mov rdx, qword ptr [rcx]
+    READ: VA = 0xfffff8a005bc91f0, LA = 0xfffff8a005bc91f0, PA1 = 0x193d1f0, SIZE = 0x8, DATA = 0xc502d4d18000
+256: 0xfffff80364d2b602 xor r8d, r8d
+257: 0xfffff80364d2b605 mov rcx, rdx
+258: 0xfffff80364d2b608 shr rcx, 0x1
+259: 0xfffff80364d2b60b mov rax, rcx
+260: 0xfffff80364d2b60e and eax, 0x7ffff
+261: 0xfffff80364d2b613 cmp rax, 0x3ffff
+262: 0xfffff80364d2b619 jnb 0x20
+263: 0xfffff80364d2b61b and ecx, 0x7ffff
+264: 0xfffff80364d2b621 mov r8d, 0x3ffff
+265: 0xfffff80364d2b627 btr rdx, 0x13
+266: 0xfffff80364d2b62c sub r8d, ecx
+267: 0xfffff80364d2b62f or rdx, 0x7fffe
+268: 0xfffff80364d2b636 mov qword ptr [r9], rdx
+    WRITE: VA = 0xfffff8a005bc91f0, LA = 0xfffff8a005bc91f0, PA1 = 0x193d1f0, SIZE = 0x8, DATA = 0xc502d4d187fffe
+269: 0xfffff80364d2b639 mov eax, r8d
+270: 0xfffff80364d2b63c ret 
+    READ: VA = 0xfffff880032f6c58, LA = 0xfffff880032f6c58, PA1 = 0x1adbc58, SIZE = 0x8, DATA = 0xfffff8365b4b0
+271: 0xfffff803650b4b00 inc eax
+272: 0xfffff803650b4b02 movsxd rcx, eax
+273: 0xfffff803650b4b05 mov rax, rcx
+274: 0xfffff803650b4b08 lock xadd qword ptr [rbx], rax
+    RWI: VA = 0xfffff8a005a9a030, LA = 0xfffff8a005a9a030, PA1 = 0x17bc030, SIZE = 0x8, DATA = 0x0000000e
+    WRITE: VA = 0xfffff8a005a9a030, LA = 0xfffff8a005a9a030, PA1 = 0x17bc030, SIZE = 0x8, DATA = 0x0000040e
+275: 0xfffff803650b4b0d test rax, rax
+276: 0xfffff803650b4b10 jle 0x1bb127
+277: 0xfffff803650b4b16 mov eax, 0x1
+278: 0xfffff803650b4b1b lock xadd qword ptr [r14], rax
+    RWI: VA = 0xfffff8a005bc91f0, LA = 0xfffff8a005bc91f0, PA1 = 0x193d1f0, SIZE = 0x8, DATA = 0xc502d4d187fffe
+    WRITE: VA = 0xfffff8a005bc91f0, LA = 0xfffff8a005bc91f0, PA1 = 0x193d1f0, SIZE = 0x8, DATA = 0xc502d4d187ffff
+279: 0xfffff803650b4b20 lea rcx, ptr [r15+0x30]
+280: 0xfffff803650b4b24 lock or dword ptr [rsp], 0x0
+    RWI: VA = 0xfffff880032f6c60, LA = 0xfffff880032f6c60, PA1 = 0x1adbc60, SIZE = 0x4, DATA = 0x0000
+    WRITE: VA = 0xfffff880032f6c60, LA = 0xfffff880032f6c60, PA1 = 0x1adbc60, SIZE = 0x4, DATA = 0x0000
+281: 0xfffff803650b4b29 cmp qword ptr [rcx], 0x0
+    READ: VA = 0xfffff8a005a9aeb0, LA = 0xfffff8a005a9aeb0, PA1 = 0x17bceb0, SIZE = 0x8, DATA = 0x00000000
+282: 0xfffff803650b4b2d jnz 0x20b
+283: 0xfffff803650b4b33 mov rbp, qword ptr [rsp+0x38]
+    READ: VA = 0xfffff880032f6c98, LA = 0xfffff880032f6c98, PA1 = 0x1adbc98, SIZE = 0x8, DATA = 0x0005000a
+284: 0xfffff803650b4b38 mov rsi, qword ptr [rsp+0x30]
+    READ: VA = 0xfffff880032f6c90, LA = 0xfffff880032f6c90, PA1 = 0x1adbc90, SIZE = 0x8, DATA = 0xc502d4d18000
+285: 0xfffff803650b4b3d jmp 0xfffffffffffffe46
+286: 0xfffff803650b4983 cmp dword ptr [rip-0xef956], 0x0
+    READ: VA = 0xfffff80364fc5034, LA = 0xfffff80364fc5034, PA1 = 0x1fc5034, SIZE = 0x4, DATA = 0x0000
+287: 0xfffff803650b498a jnz 0x1bb25e
+288: 0xfffff803650b4990 mov rax, qword ptr [rsp+0xa0]
+    READ: VA = 0xfffff880032f6d00, LA = 0xfffff880032f6d00, PA1 = 0x1adbd00, SIZE = 0x8, DATA = 0xfffffa80188cea0
+289: 0xfffff803650b4998 test rax, rax
+290: 0xfffff803650b499b jz 0x10
+291: 0xfffff803650b499d movzx ecx, byte ptr [rax+0x28]
+    READ: VA = 0xfffffa800188cec8, LA = 0xfffffa800188cec8, PA1 = 0x7e48cec8, SIZE = 0x1, DATA = 0x5
+292: 0xfffff803650b49a1 cmp dword ptr [rsp+0x3c], ecx
+    READ: VA = 0xfffff880032f6c9c, LA = 0xfffff880032f6c9c, PA1 = 0x1adbc9c, SIZE = 0x4, DATA = 0x0005
+293: 0xfffff803650b49a5 jnz 0x33b
+294: 0xfffff803650b49ab mov ecx, dword ptr [rsp+0x98]
+    READ: VA = 0xfffff880032f6cf8, LA = 0xfffff880032f6cf8, PA1 = 0x1adbcf8, SIZE = 0x4, DATA = 0x0002
+295: 0xfffff803650b49b2 and ebp, 0x1ffffff
+296: 0xfffff803650b49b8 cmp byte ptr [rsp+0xa8], 0x0
+    READ: VA = 0xfffff880032f6d08, LA = 0xfffff880032f6d08, PA1 = 0x1adbd08, SIZE = 0x1, DATA = 0x1
+297: 0xfffff803650b49c0 jz 0xe
+298: 0xfffff803650b49c2 mov eax, ebp
+299: 0xfffff803650b49c4 not eax
+300: 0xfffff803650b49c6 test ecx, eax
+301: 0xfffff803650b49c8 jnz 0x270
+302: 0xfffff803650b49ce mov rax, qword ptr [rsp+0xc0]
+    READ: VA = 0xfffff880032f6d20, LA = 0xfffff880032f6d20, PA1 = 0x1adbd20, SIZE = 0x8, DATA = 0xfffff88032f6da0
+303: 0xfffff803650b49d6 test rax, rax
+304: 0xfffff803650b49d9 jnz 0x61
+305: 0xfffff803650b4a3a shr esi, 0x14
+306: 0xfffff803650b4a3d mov dword ptr [rax+0x4], ebp
+    WRITE: VA = 0xfffff880032f6da4, LA = 0xfffff880032f6da4, PA1 = 0x1adbda4, SIZE = 0x4, DATA = 0x000a
+307: 0xfffff803650b4a40 and esi, 0x7
+308: 0xfffff803650b4a43 mov dword ptr [rax], esi
+    WRITE: VA = 0xfffff880032f6da0, LA = 0xfffff880032f6da0, PA1 = 0x1adbda0, SIZE = 0x4, DATA = 0x0000
+309: 0xfffff803650b4a45 test sil, 0x4
+310: 0xfffff803650b4a49 jz 0xffffffffffffff9c
+311: 0xfffff803650b49e5 cmp byte ptr [rsp+0x90], 0x0
+    READ: VA = 0xfffff880032f6cf0, LA = 0xfffff880032f6cf0, PA1 = 0x1adbcf0, SIZE = 0x1, DATA = 0x0
+312: 0xfffff803650b49ed mov rcx, qword ptr [rsp+0xb8]
+    READ: VA = 0xfffff880032f6d18, LA = 0xfffff880032f6d18, PA1 = 0x1adbd18, SIZE = 0x8, DATA = 0xfffff88032f6d88
+313: 0xfffff803650b49f5 lea rax, ptr [rbx+0x30]
+314: 0xfffff803650b49f9 mov qword ptr [rcx], rax
+    WRITE: VA = 0xfffff880032f6d88, LA = 0xfffff880032f6d88, PA1 = 0x1adbd88, SIZE = 0x8, DATA = 0xfffff8a05a9a060
+315: 0xfffff803650b49fc jnz 0x312
+316: 0xfffff803650b4a02 movsx eax, word ptr [rdi+0x1e4]
+    READ: VA = 0xfffffa8001932924, LA = 0xfffffa8001932924, PA1 = 0x7e532924, SIZE = 0x2, DATA = 0xffff
+317: 0xfffff803650b4a09 inc eax
+318: 0xfffff803650b4a0b mov word ptr [rdi+0x1e4], ax
+    WRITE: VA = 0xfffffa8001932924, LA = 0xfffffa8001932924, PA1 = 0x7e532924, SIZE = 0x2, DATA = 0x00
+319: 0xfffff803650b4a12 test ax, ax
+320: 0xfffff803650b4a15 jnz 0x12
+321: 0xfffff803650b4a17 lea rax, ptr [rdi+0x98]
+322: 0xfffff803650b4a1e cmp qword ptr [rax], rax
+    READ: VA = 0xfffffa80019327d8, LA = 0xfffffa80019327d8, PA1 = 0x7e5327d8, SIZE = 0x8, DATA = 0xfffffa8019327d8
+323: 0xfffff803650b4a21 jnz 0x27f
+324: 0xfffff803650b4a27 xor eax, eax
+325: 0xfffff803650b4a29 add rsp, 0x48
+326: 0xfffff803650b4a2d pop r15
+    READ: VA = 0xfffff880032f6ca8, LA = 0xfffff880032f6ca8, PA1 = 0x1adbca8, SIZE = 0x8, DATA = 0x000b949bee80
+327: 0xfffff803650b4a2f pop r14
+    READ: VA = 0xfffff880032f6cb0, LA = 0xfffff880032f6cb0, PA1 = 0x1adbcb0, SIZE = 0x8, DATA = 0x000b949bee70
+328: 0xfffff803650b4a31 pop r13
+    READ: VA = 0xfffff880032f6cb8, LA = 0xfffff880032f6cb8, PA1 = 0x1adbcb8, SIZE = 0x8, DATA = 0x00000000
+329: 0xfffff803650b4a33 pop r12
+    READ: VA = 0xfffff880032f6cc0, LA = 0xfffff880032f6cc0, PA1 = 0x1adbcc0, SIZE = 0x8, DATA = 0x00000000
+330: 0xfffff803650b4a35 pop rdi
+    READ: VA = 0xfffff880032f6cc8, LA = 0xfffff880032f6cc8, PA1 = 0x1adbcc8, SIZE = 0x8, DATA = 0xfffff88032f6d1
+331: 0xfffff803650b4a36 pop rsi
+    READ: VA = 0xfffff880032f6cd0, LA = 0xfffff880032f6cd0, PA1 = 0x1adbcd0, SIZE = 0x8, DATA = 0x00000007c
+332: 0xfffff803650b4a37 pop rbp
+    READ: VA = 0xfffff880032f6cd8, LA = 0xfffff880032f6cd8, PA1 = 0x1adbcd8, SIZE = 0x8, DATA = 0xfffff88032f6ec0
+333: 0xfffff803650b4a38 pop rbx
+    READ: VA = 0xfffff880032f6ce0, LA = 0xfffff880032f6ce0, PA1 = 0x1adbce0, SIZE = 0x8, DATA = 0x0000000c
+334: 0xfffff803650b4a39 ret 
+    READ: VA = 0xfffff880032f6ce8, LA = 0xfffff880032f6ce8, PA1 = 0x1adbce8, SIZE = 0x8, DATA = 0xfffff8365b4e65
+335: 0xfffff803650b4e65 add rsp, 0x48
+336: 0xfffff803650b4e69 ret 
+    READ: VA = 0xfffff880032f6d38, LA = 0xfffff880032f6d38, PA1 = 0x1adbd38, SIZE = 0x8, DATA = 0xfffff836559f44
+337: 0xfffff80365059f44 test eax, eax
+338: 0xfffff80365059f46 js 0xe9
+339: 0xfffff80365059f4c mov esi, dword ptr [rsp+0x64]
+    READ: VA = 0xfffff880032f6da4, LA = 0xfffff880032f6da4, PA1 = 0x1adbda4, SIZE = 0x4, DATA = 0x000a
+340: 0xfffff80365059f50 test ebx, ebx
+341: 0xfffff80365059f52 cmovnz esi, ebx
+342: 0xfffff80365059f55 mov rbx, qword ptr [rsp+0x48]
+    READ: VA = 0xfffff880032f6d88, LA = 0xfffff880032f6d88, PA1 = 0x1adbd88, SIZE = 0x8, DATA = 0xfffff8a05a9a060
+343: 0xfffff80365059f5a cmp byte ptr [rsp+0x40], 0x0
+    READ: VA = 0xfffff880032f6d80, LA = 0xfffff880032f6d80, PA1 = 0x1adbd80, SIZE = 0x1, DATA = 0x1
+344: 0xfffff80365059f5f jz 0x130
+345: 0xfffff80365059f65 mov ecx, dword ptr [rbx+0xc0]
+    READ: VA = 0xfffff8a005a9a120, LA = 0xfffff8a005a9a120, PA1 = 0x17bc120, SIZE = 0x4, DATA = 0x0001
+346: 0xfffff80365059f6b cmp ecx, 0x2
+347: 0xfffff80365059f6e jz 0xdf
+348: 0xfffff80365059f74 and qword ptr [rsp+0x50], 0x0
+    RWI: VA = 0xfffff880032f6d90, LA = 0xfffff880032f6d90, PA1 = 0x1adbd90, SIZE = 0x8, DATA = 0x0000000a
+    WRITE: VA = 0xfffff880032f6d90, LA = 0xfffff880032f6d90, PA1 = 0x1adbd90, SIZE = 0x8, DATA = 0x00000000
+349: 0xfffff80365059f7a lea rax, ptr [rsp+0x50]
+350: 0xfffff80365059f7f mov qword ptr [rsp+0x38], rax
+    WRITE: VA = 0xfffff880032f6d78, LA = 0xfffff880032f6d78, PA1 = 0x1adbd78, SIZE = 0x8, DATA = 0xfffff88032f6d90
+351: 0xfffff80365059f84 mov byte ptr [rsp+0x30], 0x0
+    WRITE: VA = 0xfffff880032f6d70, LA = 0xfffff880032f6d70, PA1 = 0x1adbd70, SIZE = 0x1, DATA = 0x0
+352: 0xfffff80365059f89 mov byte ptr [rsp+0x28], dil
+    WRITE: VA = 0xfffff880032f6d68, LA = 0xfffff880032f6d68, PA1 = 0x1adbd68, SIZE = 0x1, DATA = 0x1
+353: 0xfffff80365059f8e mov eax, dword ptr [rsp+0x6c]
+    READ: VA = 0xfffff880032f6dac, LA = 0xfffff880032f6dac, PA1 = 0x1adbdac, SIZE = 0x4, DATA = 0x0002
+354: 0xfffff80365059f92 mov dword ptr [rsp+0x20], eax
+    WRITE: VA = 0xfffff880032f6d60, LA = 0xfffff880032f6d60, PA1 = 0x1adbd60, SIZE = 0x4, DATA = 0x0002
+355: 0xfffff80365059f96 mov r9d, dword ptr [rsp+0xb0]
+    READ: VA = 0xfffff880032f6df0, LA = 0xfffff880032f6df0, PA1 = 0x1adbdf0, SIZE = 0x4, DATA = 0x0002
+356: 0xfffff80365059f9e mov r8b, r15b
+357: 0xfffff80365059fa1 mov rdx, r14
+358: 0xfffff80365059fa4 mov rcx, rbx
+359: 0xfffff80365059fa7 call 0xffffffffffff9479
+    WRITE: VA = 0xfffff880032f6d38, LA = 0xfffff880032f6d38, PA1 = 0x1adbd38, SIZE = 0x8, DATA = 0xfffff836559fac
+360: 0xfffff80365053420 mov byte ptr [rsp+0x18], r8b
+    WRITE: VA = 0xfffff880032f6d50, LA = 0xfffff880032f6d50, PA1 = 0x1adbd50, SIZE = 0x1, DATA = 0x0
+------Removing data-flow dependency: 0xfffff880032f6d50
+1095: 0xfffff803650b8cf7 mov rdi, qword ptr [r8+0x28]
+    READ: VA = 0xb949bee728, LA = 0xb949bee728, PA1 = 0x18f8728, SIZE = 0x8, DATA = 0x000b949bee730
+------Adding data-flow dependency: rdi
+1096: 0xfffff803650b8cfb mov qword ptr [rsp+0x38], rdi
+    WRITE: VA = 0xfffff880032f6b58, LA = 0xfffff880032f6b58, PA1 = 0x1adbb58, SIZE = 0x8, DATA = 0x000b949bee730
+------Adding data-flow dependency: 0xfffff880032f6b58
+1097: 0xfffff803650b8d00 test rdi, rdi
+------Data-flow dependency originated from line 1095 is used: rdi
+1098: 0xfffff803650b8d03 jz 0x92
+1099: 0xfffff803650b8d09 test r14b, r14b
+1100: 0xfffff803650b8d0c jz 0x3d
+1101: 0xfffff803650b8d0e mov rax, qword ptr gs:[0x188]
+    READ: VA = 0x188, LA = 0xfffff80364f65188, PA1 = 0x1f65188, SIZE = 0x8, DATA = 0xfffffa801932740
+1102: 0xfffff803650b8d17 movzx ecx, byte ptr [rax+0x232]
+    READ: VA = 0xfffffa8001932972, LA = 0xfffffa8001932972, PA1 = 0x7e532972, SIZE = 0x1, DATA = 0x1
+1103: 0xfffff803650b8d1e test cl, cl
+1104: 0xfffff803650b8d20 jz 0x1a
+1105: 0xfffff803650b8d22 mov rax, qword ptr [rsp+0x38]
+    READ: VA = 0xfffff880032f6b58, LA = 0xfffff880032f6b58, PA1 = 0x1adbb58, SIZE = 0x8, DATA = 0x000b949bee730
+------Adding data-flow dependency: rax
+1106: 0xfffff803650b8d27 test al, 0x3
+1107: 0xfffff803650b8d29 jnz 0x61
+1108: 0xfffff803650b8d2b mov rcx, qword ptr [rip-0xf3d32]
+    READ: VA = 0xfffff80364fc5000, LA = 0xfffff80364fc5000, PA1 = 0x1fc5000, SIZE = 0x8, DATA = 0x007ffffff00
+1109: 0xfffff803650b8d32 cmp rax, rcx
+------Data-flow dependency originated from line 1095 is used: rax
+1110: 0xfffff803650b8d35 jnb 0x5b
+1111: 0xfffff803650b8d37 movzx eax, byte ptr [rax]
+------Data-flow dependency originated from line 1095 is used: rax
+    READ: VA = 0xb949bee730, LA = 0xb949bee730, PA1 = 0x18f8730, SIZE = 0x1, DATA = 0xc
+1112: 0xfffff803650b8d3a mov rdi, qword ptr [rsp+0x38]
+------Removing data-flow dependency: rdi
+    READ: VA = 0xfffff880032f6b58, LA = 0xfffff880032f6b58, PA1 = 0x1adbb58, SIZE = 0x8, DATA = 0x000b949bee730
+------Adding data-flow dependency: rdi
+1113: 0xfffff803650b8d3f mov rcx, qword ptr [rsp+0x48]
+    READ: VA = 0xfffff880032f6b68, LA = 0xfffff880032f6b68, PA1 = 0x1adbb68, SIZE = 0x8, DATA = 0x00000000
+1114: 0xfffff803650b8d44 mov rsi, qword ptr [rsp+0x40]
+    READ: VA = 0xfffff880032f6b60, LA = 0xfffff880032f6b60, PA1 = 0x1adbb60, SIZE = 0x8, DATA = 0x00000000
+1115: 0xfffff803650b8d49 mov eax, dword ptr [rdi]
+    READ: VA = 0xb949bee730, LA = 0xb949bee730, PA1 = 0x18f8730, SIZE = 0x4, DATA = 0x000c
+1116: 0xfffff803650b8d4b mov dword ptr [rbx+0x30], eax
+    WRITE: VA = 0xfffffa800af65180, LA = 0xfffffa800af65180, PA1 = 0x784b180, SIZE = 0x4, DATA = 0x000c
+1117: 0xfffff803650b8d4e mov eax, dword ptr [rdi+0x4]
+    READ: VA = 0xb949bee734, LA = 0xb949bee734, PA1 = 0x18f8734, SIZE = 0x4, DATA = 0x0002
+1118: 0xfffff803650b8d51 mov dword ptr [rbx+0x34], eax
+    WRITE: VA = 0xfffffa800af65184, LA = 0xfffffa800af65184, PA1 = 0x784b184, SIZE = 0x4, DATA = 0x0002
+1119: 0xfffff803650b8d54 mov eax, dword ptr [rdi+0x8]
+    READ: VA = 0xb949bee738, LA = 0xb949bee738, PA1 = 0x18f8738, SIZE = 0x4, DATA = 0x49c801
+1120: 0xfffff803650b8d57 mov dword ptr [rbx+0x38], eax
+    WRITE: VA = 0xfffffa800af65188, LA = 0xfffffa800af65188, PA1 = 0x784b188, SIZE = 0x4, DATA = 0x49c801
+1121: 0xfffff803650b8d5a jmp 0x3b
+1122: 0xfffff803650b8d95 jmp 0x12
+1123: 0xfffff803650b8da7 test rcx, rcx
+1124: 0xfffff803650b8daa jnz 0x7b
+1125: 0xfffff803650b8dac test rdi, rdi
+------Data-flow dependency originated from line 1095 is used: rdi
+1126: 0xfffff803650b8daf jnz 0x51
+1127: 0xfffff803650b8e00 lea rax, ptr [rbx+0x30]
+------Removing data-flow dependency: rax
+1128: 0xfffff803650b8e04 mov dword ptr [rax], 0xc
+    WRITE: VA = 0xfffffa800af65180, LA = 0xfffffa800af65180, PA1 = 0x784b180, SIZE = 0x4, DATA = 0x000c
+1129: 0xfffff803650b8e0a mov qword ptr [rbx+0x28], rax
+    WRITE: VA = 0xfffffa800af65178, LA = 0xfffffa800af65178, PA1 = 0x784b178, SIZE = 0x8, DATA = 0xfffffa80af65180
+1130: 0xfffff803650b8e0e movzx ecx, byte ptr [rax+0x8]
+    READ: VA = 0xfffffa800af65188, LA = 0xfffffa800af65188, PA1 = 0x784b188, SIZE = 0x1, DATA = 0x1
+1131: 0xfffff803650b8e12 cmp cl, 0x1
+1132: 0xfffff803650b8e15 jnz 0x52
+1133: 0xfffff803650b8e17 mov ecx, dword ptr [rax+0x4]
+    READ: VA = 0xfffffa800af65184, LA = 0xfffffa800af65184, PA1 = 0x784b184, SIZE = 0x4, DATA = 0x0002
+1134: 0xfffff803650b8e1a test ecx, ecx
+1135: 0xfffff803650b8e1c js 0x69
+1136: 0xfffff803650b8e1e cmp ecx, 0x3
+1137: 0xfffff803650b8e21 jle 0xffffffffffffff90
+1138: 0xfffff803650b8db1 test rsi, rsi
+1139: 0xfffff803650b8db4 jz 0x40
+1140: 0xfffff803650b8df4 cmp qword ptr [rbx+0x8], 0x0
+    READ: VA = 0xfffffa800af65158, LA = 0xfffffa800af65158, PA1 = 0x784b158, SIZE = 0x8, DATA = 0x00000000
+1141: 0xfffff803650b8df9 jz 0xffffffffffffffdf
+1142: 0xfffff803650b8dd8 xor eax, eax
+1143: 0xfffff803650b8dda lea r11, ptr [rsp+0x50]
+1144: 0xfffff803650b8ddf mov rbx, qword ptr [r11+0x30]
+    READ: VA = 0xfffff880032f6ba0, LA = 0xfffff880032f6ba0, PA1 = 0x1adbba0, SIZE = 0x8, DATA = 0xfffffa80af65150
+1145: 0xfffff803650b8de3 mov rsi, qword ptr [r11+0x38]
+    READ: VA = 0xfffff880032f6ba8, LA = 0xfffff880032f6ba8, PA1 = 0x1adbba8, SIZE = 0x8, DATA = 0xfffffa8018963c0
+1146: 0xfffff803650b8de7 mov rsp, r11
+1147: 0xfffff803650b8dea pop r15
+    READ: VA = 0xfffff880032f6b70, LA = 0xfffff880032f6b70, PA1 = 0x1adbb70, SIZE = 0x8, DATA = 0x00000001
+1148: 0xfffff803650b8dec pop r14
+    READ: VA = 0xfffff880032f6b78, LA = 0xfffff880032f6b78, PA1 = 0x1adbb78, SIZE = 0x8, DATA = 0x00000001
+1149: 0xfffff803650b8dee pop r13
+    READ: VA = 0xfffff880032f6b80, LA = 0xfffff880032f6b80, PA1 = 0x1adbb80, SIZE = 0x8, DATA = 0x000b949bee70
+1150: 0xfffff803650b8df0 pop r12
+    READ: VA = 0xfffff880032f6b88, LA = 0xfffff880032f6b88, PA1 = 0x1adbb88, SIZE = 0x8, DATA = 0xfffff88032f6cd0
+1151: 0xfffff803650b8df2 pop rdi
+------Data-flow dependency originated from line 1095 is used: rdi
+    READ: VA = 0xfffff880032f6b90, LA = 0xfffff880032f6b90, PA1 = 0x1adbb90, SIZE = 0x8, DATA = 0xfffffa80188cea0
+1152: 0xfffff803650b8df3 ret 
+    READ: VA = 0xfffff880032f6b98, LA = 0xfffff880032f6b98, PA1 = 0x1adbb98, SIZE = 0x8, DATA = 0xfffff8365b869f
+1153: 0xfffff803650b869f mov esi, eax
+1154: 0xfffff803650b86a1 test eax, eax
+1155: 0xfffff803650b86a3 js 0xfffffffffff4a89f
+1156: 0xfffff803650b86a9 mov ecx, dword ptr [rbx]
+    READ: VA = 0xfffffa800af65150, LA = 0xfffffa800af65150, PA1 = 0x784b150, SIZE = 0x4, DATA = 0x0000
+1157: 0xfffff803650b86ab mov eax, dword ptr [rdi+0x48]
+    READ: VA = 0xfffffa800188cee8, LA = 0xfffffa800188cee8, PA1 = 0x7e48cee8, SIZE = 0x4, DATA = 0x0010
+1158: 0xfffff803650b86ae test ecx, eax
+1159: 0xfffff803650b86b0 jnz 0x2a5
+1160: 0xfffff803650b86b6 test cl, 0x10
+1161: 0xfffff803650b86b9 jnz 0x8f
+1162: 0xfffff803650b86bf mov eax, dword ptr [rbp+0x77]
+    READ: VA = 0xfffff880032f6cb0, LA = 0xfffff880032f6cb0, PA1 = 0x1adbcb0, SIZE = 0x4, DATA = 0x00100
+1163: 0xfffff803650b86c2 test eax, eax
+1164: 0xfffff803650b86c4 jnz 0x5
+1165: 0xfffff803650b86c9 mov ecx, dword ptr [rbp+0x7f]
+    READ: VA = 0xfffff880032f6cb8, LA = 0xfffff880032f6cb8, PA1 = 0x1adbcb8, SIZE = 0x4, DATA = 0x004f4
+1166: 0xfffff803650b86cc test ecx, ecx
+1167: 0xfffff803650b86ce jnz 0x5
+1168: 0xfffff803650b86d3 mov dword ptr [rbx+0x14], eax
+    WRITE: VA = 0xfffffa800af65164, LA = 0xfffffa800af65164, PA1 = 0x784b164, SIZE = 0x4, DATA = 0x00100
+1169: 0xfffff803650b86d6 lea rax, ptr [rbp-0x21]
+1170: 0xfffff803650b86da mov dword ptr [rbx+0x18], ecx
+    WRITE: VA = 0xfffffa800af65168, LA = 0xfffffa800af65168, PA1 = 0x784b168, SIZE = 0x4, DATA = 0x004f4
+1171: 0xfffff803650b86dd mov qword ptr [rsp+0x28], rax
+    WRITE: VA = 0xfffff880032f6bc8, LA = 0xfffff880032f6bc8, PA1 = 0x1adbbc8, SIZE = 0x8, DATA = 0xfffff88032f6c18
+1172: 0xfffff803650b86e2 mov eax, dword ptr [rbp+0x6f]
+    READ: VA = 0xfffff880032f6ca8, LA = 0xfffff880032f6ca8, PA1 = 0x1adbca8, SIZE = 0x4, DATA = 0x004f4
+1173: 0xfffff803650b86e5 lea r9, ptr [rbp-0x59]
+1174: 0xfffff803650b86e9 mov r8, rdi
+1175: 0xfffff803650b86ec movzx edx, r15b
+1176: 0xfffff803650b86f0 mov rcx, rbx
+1177: 0xfffff803650b86f3 mov dword ptr [rsp+0x20], eax
+    WRITE: VA = 0xfffff880032f6bc0, LA = 0xfffff880032f6bc0, PA1 = 0x1adbbc0, SIZE = 0x4, DATA = 0x004f4
+1178: 0xfffff803650b86f7 call 0xfffffffffffff299
+    WRITE: VA = 0xfffff880032f6b98, LA = 0xfffff880032f6b98, PA1 = 0x1adbb98, SIZE = 0x8, DATA = 0xfffff8365b86fc
+1179: 0xfffff803650b7990 mov qword ptr [rsp+0x20], r9
+    WRITE: VA = 0xfffff880032f6bb8, LA = 0xfffff880032f6bb8, PA1 = 0x1adbbb8, SIZE = 0x8, DATA = 0xfffff88032f6be0
+1180: 0xfffff803650b7995 mov byte ptr [rsp+0x10], dl
+    WRITE: VA = 0xfffff880032f6ba8, LA = 0xfffff880032f6ba8, PA1 = 0x1adbba8, SIZE = 0x1, DATA = 0x1
+1181: 0xfffff803650b7999 push rbx
+    WRITE: VA = 0xfffff880032f6b90, LA = 0xfffff880032f6b90, PA1 = 0x1adbb90, SIZE = 0x8, DATA = 0xfffffa80af65150
+1182: 0xfffff803650b799a push rbp
+    WRITE: VA = 0xfffff880032f6b88, LA = 0xfffff880032f6b88, PA1 = 0x1adbb88, SIZE = 0x8, DATA = 0xfffff88032f6c39
+1183: 0xfffff803650b799b push rsi
+    WRITE: VA = 0xfffff880032f6b80, LA = 0xfffff880032f6b80, PA1 = 0x1adbb80, SIZE = 0x8, DATA = 0x00000000
+1184: 0xfffff803650b799c push rdi
+------Data-flow dependency originated from line 1095 is used: rdi
+    WRITE: VA = 0xfffff880032f6b78, LA = 0xfffff880032f6b78, PA1 = 0x1adbb78, SIZE = 0x8, DATA = 0xfffffa80188cea0
+1185: 0xfffff803650b799d push r14
+    WRITE: VA = 0xfffff880032f6b70, LA = 0xfffff880032f6b70, PA1 = 0x1adbb70, SIZE = 0x8, DATA = 0x00000001
+1186: 0xfffff803650b799f sub rsp, 0x50
+1187: 0xfffff803650b79a3 mov eax, dword ptr [rcx]
+    READ: VA = 0xfffffa800af65150, LA = 0xfffffa800af65150, PA1 = 0x784b150, SIZE = 0x4, DATA = 0x0000
+1188: 0xfffff803650b79a5 xor r10d, r10d
+1189: 0xfffff803650b79a8 xor bpl, bpl
+1190: 0xfffff803650b79ab mov rbx, r8
+1191: 0xfffff803650b79ae mov rdi, rcx
+------Removing data-flow dependency: rdi
+1192: 0xfffff803650b79b1 lea r14d, ptr [r10+0x10]
+1193: 0xfffff803650b79b5 test al, 0x20
+1194: 0xfffff803650b79b7 jnz 0x2d2
+1195: 0xfffff803650b79bd mov r8d, r10d
+1196: 0xfffff803650b79c0 mov rcx, rbx
+1197: 0xfffff803650b79c3 mov dword ptr [rsp+0x90], r8d
+    WRITE: VA = 0xfffff880032f6bb0, LA = 0xfffff880032f6bb0, PA1 = 0x1adbbb0, SIZE = 0x4, DATA = 0x0000
+1198: 0xfffff803650b79cb call 0xffffffffffc74c05
+    WRITE: VA = 0xfffff880032f6b18, LA = 0xfffff880032f6b18, PA1 = 0x1adbb18, SIZE = 0x8, DATA = 0xfffff8365b79d0
+1199: 0xfffff80364d2c5d0 cmp rcx, qword ptr [rip+0x298a61]
+    READ: VA = 0xfffff80364fc5038, LA = 0xfffff80364fc5038, PA1 = 0x1fc5038, SIZE = 0x8, DATA = 0xfffffa8018b3080
+1200: 0xfffff80364d2c5d7 jnz 0x26
+1201: 0xfffff80364d2c5fd xor al, al
+1202: 0xfffff80364d2c5ff ret 
+    READ: VA = 0xfffff880032f6b18, LA = 0xfffff880032f6b18, PA1 = 0x1adbb18, SIZE = 0x8, DATA = 0xfffff8365b79d0
+1203: 0xfffff803650b79d0 test al, al
+1204: 0xfffff803650b79d2 jnz 0x1b96c6
+1205: 0xfffff803650b79d8 mov edx, r10d
+1206: 0xfffff803650b79db mov rcx, qword ptr gs:[0x188]
+    READ: VA = 0x188, LA = 0xfffff80364f65188, PA1 = 0x1f65188, SIZE = 0x8, DATA = 0xfffffa801932740
+1207: 0xfffff803650b79e4 mov rax, qword ptr [rip-0xf29cb]
+    READ: VA = 0xfffff80364fc5020, LA = 0xfffff80364fc5020, PA1 = 0x1fc5020, SIZE = 0x8, DATA = 0xfffffa8018a530
+1208: 0xfffff803650b79eb mov dword ptr [rsp+0x80], edx
+    WRITE: VA = 0xfffff880032f6ba0, LA = 0xfffff880032f6ba0, PA1 = 0x1adbba0, SIZE = 0x4, DATA = 0x0000
+1209: 0xfffff803650b79f2 mov qword ptr [rsp+0x48], r12
+    WRITE: VA = 0xfffff880032f6b68, LA = 0xfffff880032f6b68, PA1 = 0x1adbb68, SIZE = 0x8, DATA = 0xfffff88032f6cd0
+1210: 0xfffff803650b79f7 mov esi, 0x20
+1211: 0xfffff803650b79fc cmp qword ptr [rcx+0xb8], rax
+    READ: VA = 0xfffffa80019327f8, LA = 0xfffffa80019327f8, PA1 = 0x7e5327f8, SIZE = 0x8, DATA = 0xfffffa80192b080
+1212: 0xfffff803650b7a03 jz 0x1da
+1213: 0xfffff803650b7a09 mov rcx, qword ptr gs:[0x188]
+    READ: VA = 0x188, LA = 0xfffff80364f65188, PA1 = 0x1f65188, SIZE = 0x8, DATA = 0xfffffa801932740
+1214: 0xfffff803650b7a12 mov rax, qword ptr [rip-0xf2911]
+    READ: VA = 0xfffff80364fc5108, LA = 0xfffff80364fc5108, PA1 = 0x1fc5108, SIZE = 0x8, DATA = 0xfffff8364fbf20
+1215: 0xfffff803650b7a19 cmp qword ptr [rcx+0xb8], rax
+    READ: VA = 0xfffffa80019327f8, LA = 0xfffffa80019327f8, PA1 = 0x7e5327f8, SIZE = 0x8, DATA = 0xfffffa80192b080
+1216: 0xfffff803650b7a20 jz 0x1bd
+1217: 0xfffff803650b7a26 cmp qword ptr [rip-0xf2a0d], r10
+    READ: VA = 0xfffff80364fc5020, LA = 0xfffff80364fc5020, PA1 = 0x1fc5020, SIZE = 0x8, DATA = 0xfffffa8018a530
+1218: 0xfffff803650b7a2d jz 0x1b0
+1219: 0xfffff803650b7a33 mov r12d, esi
+1220: 0xfffff803650b7a36 or bpl, 0x8
+1221: 0xfffff803650b7a3a movzx eax, byte ptr [rbx+0x42]
+    READ: VA = 0xfffffa800188cee2, LA = 0xfffffa800188cee2, PA1 = 0x7e48cee2, SIZE = 0x1, DATA = 0xc
+1222: 0xfffff803650b7a3e test r14b, al
+1223: 0xfffff803650b7a41 jz 0x17a
+1224: 0xfffff803650b7bbb mov r14d, r10d
+1225: 0xfffff803650b7bbe jmp 0xfffffffffffffe8d
+1226: 0xfffff803650b7a4b mov qword ptr [rsp+0x40], r13
+    WRITE: VA = 0xfffff880032f6b60, LA = 0xfffff880032f6b60, PA1 = 0x1adbb60, SIZE = 0x8, DATA = 0x000b949bee70
+1227: 0xfffff803650b7a50 cmp word ptr [r9], r10w
+    READ: VA = 0xfffff880032f6be0, LA = 0xfffff880032f6be0, PA1 = 0x1adbbe0, SIZE = 0x2, DATA = 0x00
+1228: 0xfffff803650b7a54 jnz 0x1d2
+1229: 0xfffff803650b7a5a mov r13d, r10d
+1230: 0xfffff803650b7a5d mov qword ptr [rsp+0x38], r15
+    WRITE: VA = 0xfffff880032f6b58, LA = 0xfffff880032f6b58, PA1 = 0x1adbb58, SIZE = 0x8, DATA = 0x00000001
+------Removing data-flow dependency: 0xfffff880032f6b58
+----------------------------STOP ANALYZING KDF, ADDRESS: 0xb949bee728

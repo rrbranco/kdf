@@ -1,0 +1,38 @@
+----------------------------START ANALYZING KDF, ADDRESS: 0x7ff623e7a140
+859: 0xfffff9603721cbc2 mov rcx, qword ptr [rax+0x140]
+    READ: VA = 0x7ff623e7a140, LA = 0x7ff623e7a140, PA1 = 0x5299b140, SIZE = 0x8, DATA = 0x00000000
+------Adding data-flow dependency: rcx
+860: 0xfffff9603721cbc9 xor eax, eax
+861: 0xfffff9603721cbcb mov dword ptr [rsp+0x24], eax
+    WRITE: VA = 0xffffd000217597f4, LA = 0xffffd000217597f4, PA1 = 0x4c7267f4, SIZE = 0x4, DATA = 0x0000
+862: 0xfffff9603721cbcf lea r9d, ptr [rax+0x1]
+863: 0xfffff9603721cbd3 test rcx, rcx
+------Data-flow dependency originated from line 859 is used: rcx
+864: 0xfffff9603721cbd6 jnz 0x2a
+865: 0xfffff9603721cbd8 mov rcx, qword ptr gs:[0x188]
+------Removing data-flow dependency: rcx
+1832: 0xfffff9603721cbc2 mov rcx, qword ptr [rax+0x140]
+    READ: VA = 0x7ff623e7a140, LA = 0x7ff623e7a140, PA1 = 0x5299b140, SIZE = 0x8, DATA = 0x00000000
+------Adding data-flow dependency: rcx
+1833: 0xfffff9603721cbc9 xor eax, eax
+1834: 0xfffff9603721cbcb mov dword ptr [rsp+0x24], eax
+    WRITE: VA = 0xffffd000217597f4, LA = 0xffffd000217597f4, PA1 = 0x4c7267f4, SIZE = 0x4, DATA = 0x0000
+1835: 0xfffff9603721cbcf lea r9d, ptr [rax+0x1]
+1836: 0xfffff9603721cbd3 test rcx, rcx
+------Data-flow dependency originated from line 1832 is used: rcx
+1837: 0xfffff9603721cbd6 jnz 0x2a
+1838: 0xfffff9603721cbd8 mov rcx, qword ptr gs:[0x188]
+------Removing data-flow dependency: rcx
+2858: 0xfffff9603721cbc2 mov rcx, qword ptr [rax+0x140]
+    READ: VA = 0x7ff623e7a140, LA = 0x7ff623e7a140, PA1 = 0x5299b140, SIZE = 0x8, DATA = 0x00000000
+------Adding data-flow dependency: rcx
+2859: 0xfffff9603721cbc9 xor eax, eax
+2860: 0xfffff9603721cbcb mov dword ptr [rsp+0x24], eax
+    WRITE: VA = 0xffffd000217597f4, LA = 0xffffd000217597f4, PA1 = 0x4c7267f4, SIZE = 0x4, DATA = 0x0000
+2861: 0xfffff9603721cbcf lea r9d, ptr [rax+0x1]
+2862: 0xfffff9603721cbd3 test rcx, rcx
+------Data-flow dependency originated from line 2858 is used: rcx
+2863: 0xfffff9603721cbd6 jnz 0x2a
+2864: 0xfffff9603721cbd8 mov rcx, qword ptr gs:[0x188]
+------Removing data-flow dependency: rcx
+----------------------------STOP ANALYZING KDF, ADDRESS: 0x7ff623e7a140

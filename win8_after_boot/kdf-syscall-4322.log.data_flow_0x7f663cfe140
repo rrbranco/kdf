@@ -1,0 +1,92 @@
+----------------------------START ANALYZING KDF, ADDRESS: 0x7f663cfe140
+484: 0xfffff960001d085b mov rax, qword ptr [rdi+0x140]
+    READ: VA = 0x7f663cfe140, LA = 0x7f663cfe140, PA1 = 0x3b2f7140, SIZE = 0x8, DATA = 0x00000000
+------Adding data-flow dependency: rax
+485: 0xfffff960001d0862 mov dword ptr [rsp+0x24], r12d
+    WRITE: VA = 0xfffff8800459c774, LA = 0xfffff8800459c774, PA1 = 0x108fe774, SIZE = 0x4, DATA = 0x0000
+486: 0xfffff960001d0867 test rax, rax
+------Data-flow dependency originated from line 484 is used: rax
+487: 0xfffff960001d086a jnz 0x14b
+488: 0xfffff960001d0870 mov rcx, qword ptr gs:[0x188]
+    READ: VA = 0x188, LA = 0xfffff80364f65188, PA1 = 0x1f65188, SIZE = 0x8, DATA = 0xfffffa80dff9880
+489: 0xfffff960001d0879 mov qword ptr [rsp+0x38], rcx
+    WRITE: VA = 0xfffff8800459c788, LA = 0xfffff8800459c788, PA1 = 0x108fe788, SIZE = 0x8, DATA = 0xfffffa80dff9880
+490: 0xfffff960001d087e lock cmpxchg qword ptr [rdi+0x140], rcx
+    RWI: VA = 0x7f663cfe140, LA = 0x7f663cfe140, PA1 = 0x3b2f7140, SIZE = 0x8, DATA = 0x00000000
+    WRITE: VA = 0x7f663cfe140, LA = 0x7f663cfe140, PA1 = 0x3b2f7140, SIZE = 0x8, DATA = 0xfffffa80dff9880
+491: 0xfffff960001d0887 jnz 0x12e
+492: 0xfffff960001d088d mov dword ptr [rsp+0x24], 0x1
+    WRITE: VA = 0xfffff8800459c774, LA = 0xfffff8800459c774, PA1 = 0x108fe774, SIZE = 0x4, DATA = 0x0001
+493: 0xfffff960001d0895 lea rcx, ptr [rip-0x7089c]
+494: 0xfffff960001d089c mov edx, dword ptr [rcx+r14*4+0x38e560]
+    READ: VA = 0xfffff960004ee568, LA = 0xfffff960004ee568, PA1 = 0x23b05568, SIZE = 0x4, DATA = 0x0008
+495: 0xfffff960001d08a4 cmp dword ptr [rdi+r14*4+0x148], edx
+    READ: VA = 0x7f663cfe150, LA = 0x7f663cfe150, PA1 = 0x3b2f7150, SIZE = 0x4, DATA = 0x0002
+496: 0xfffff960001d08ac jnb 0xd1
+497: 0xfffff960001d08b2 mov eax, dword ptr [rcx+r14*4+0x38e550]
+    READ: VA = 0xfffff960004ee558, LA = 0xfffff960004ee558, PA1 = 0x23b05558, SIZE = 0x4, DATA = 0x00012
+498: 0xfffff960001d08ba add rax, 0x2b
+------Data-flow dependency originated from line 484 is used: rax
+499: 0xfffff960001d08be lea rax, ptr [rdi+rax*8]
+------Removing data-flow dependency: rax
+967: 0xfffff960001d085b mov rax, qword ptr [rdi+0x140]
+    READ: VA = 0x7f663cfe140, LA = 0x7f663cfe140, PA1 = 0x3b2f7140, SIZE = 0x8, DATA = 0x00000000
+------Adding data-flow dependency: rax
+968: 0xfffff960001d0862 mov dword ptr [rsp+0x24], r12d
+    WRITE: VA = 0xfffff8800459c774, LA = 0xfffff8800459c774, PA1 = 0x108fe774, SIZE = 0x4, DATA = 0x0000
+969: 0xfffff960001d0867 test rax, rax
+------Data-flow dependency originated from line 967 is used: rax
+970: 0xfffff960001d086a jnz 0x14b
+971: 0xfffff960001d0870 mov rcx, qword ptr gs:[0x188]
+    READ: VA = 0x188, LA = 0xfffff80364f65188, PA1 = 0x1f65188, SIZE = 0x8, DATA = 0xfffffa80dff9880
+972: 0xfffff960001d0879 mov qword ptr [rsp+0x38], rcx
+    WRITE: VA = 0xfffff8800459c788, LA = 0xfffff8800459c788, PA1 = 0x108fe788, SIZE = 0x8, DATA = 0xfffffa80dff9880
+973: 0xfffff960001d087e lock cmpxchg qword ptr [rdi+0x140], rcx
+    RWI: VA = 0x7f663cfe140, LA = 0x7f663cfe140, PA1 = 0x3b2f7140, SIZE = 0x8, DATA = 0x00000000
+    WRITE: VA = 0x7f663cfe140, LA = 0x7f663cfe140, PA1 = 0x3b2f7140, SIZE = 0x8, DATA = 0xfffffa80dff9880
+974: 0xfffff960001d0887 jnz 0x12e
+975: 0xfffff960001d088d mov dword ptr [rsp+0x24], 0x1
+    WRITE: VA = 0xfffff8800459c774, LA = 0xfffff8800459c774, PA1 = 0x108fe774, SIZE = 0x4, DATA = 0x0001
+976: 0xfffff960001d0895 lea rcx, ptr [rip-0x7089c]
+977: 0xfffff960001d089c mov edx, dword ptr [rcx+r14*4+0x38e560]
+    READ: VA = 0xfffff960004ee568, LA = 0xfffff960004ee568, PA1 = 0x23b05568, SIZE = 0x4, DATA = 0x0008
+978: 0xfffff960001d08a4 cmp dword ptr [rdi+r14*4+0x148], edx
+    READ: VA = 0x7f663cfe150, LA = 0x7f663cfe150, PA1 = 0x3b2f7150, SIZE = 0x4, DATA = 0x0003
+979: 0xfffff960001d08ac jnb 0xd1
+980: 0xfffff960001d08b2 mov eax, dword ptr [rcx+r14*4+0x38e550]
+    READ: VA = 0xfffff960004ee558, LA = 0xfffff960004ee558, PA1 = 0x23b05558, SIZE = 0x4, DATA = 0x00012
+981: 0xfffff960001d08ba add rax, 0x2b
+------Data-flow dependency originated from line 967 is used: rax
+982: 0xfffff960001d08be lea rax, ptr [rdi+rax*8]
+------Removing data-flow dependency: rax
+1504: 0xfffff960001d085b mov rax, qword ptr [rdi+0x140]
+    READ: VA = 0x7f663cfe140, LA = 0x7f663cfe140, PA1 = 0x3b2f7140, SIZE = 0x8, DATA = 0x00000000
+------Adding data-flow dependency: rax
+1505: 0xfffff960001d0862 mov dword ptr [rsp+0x24], r12d
+    WRITE: VA = 0xfffff8800459c774, LA = 0xfffff8800459c774, PA1 = 0x108fe774, SIZE = 0x4, DATA = 0x0000
+1506: 0xfffff960001d0867 test rax, rax
+------Data-flow dependency originated from line 1504 is used: rax
+1507: 0xfffff960001d086a jnz 0x14b
+1508: 0xfffff960001d0870 mov rcx, qword ptr gs:[0x188]
+    READ: VA = 0x188, LA = 0xfffff80364f65188, PA1 = 0x1f65188, SIZE = 0x8, DATA = 0xfffffa80dff9880
+1509: 0xfffff960001d0879 mov qword ptr [rsp+0x38], rcx
+    WRITE: VA = 0xfffff8800459c788, LA = 0xfffff8800459c788, PA1 = 0x108fe788, SIZE = 0x8, DATA = 0xfffffa80dff9880
+1510: 0xfffff960001d087e lock cmpxchg qword ptr [rdi+0x140], rcx
+    RWI: VA = 0x7f663cfe140, LA = 0x7f663cfe140, PA1 = 0x3b2f7140, SIZE = 0x8, DATA = 0x00000000
+    WRITE: VA = 0x7f663cfe140, LA = 0x7f663cfe140, PA1 = 0x3b2f7140, SIZE = 0x8, DATA = 0xfffffa80dff9880
+1511: 0xfffff960001d0887 jnz 0x12e
+1512: 0xfffff960001d088d mov dword ptr [rsp+0x24], 0x1
+    WRITE: VA = 0xfffff8800459c774, LA = 0xfffff8800459c774, PA1 = 0x108fe774, SIZE = 0x4, DATA = 0x0001
+1513: 0xfffff960001d0895 lea rcx, ptr [rip-0x7089c]
+1514: 0xfffff960001d089c mov edx, dword ptr [rcx+r14*4+0x38e560]
+    READ: VA = 0xfffff960004ee568, LA = 0xfffff960004ee568, PA1 = 0x23b05568, SIZE = 0x4, DATA = 0x0008
+1515: 0xfffff960001d08a4 cmp dword ptr [rdi+r14*4+0x148], edx
+    READ: VA = 0x7f663cfe150, LA = 0x7f663cfe150, PA1 = 0x3b2f7150, SIZE = 0x4, DATA = 0x0004
+1516: 0xfffff960001d08ac jnb 0xd1
+1517: 0xfffff960001d08b2 mov eax, dword ptr [rcx+r14*4+0x38e550]
+    READ: VA = 0xfffff960004ee558, LA = 0xfffff960004ee558, PA1 = 0x23b05558, SIZE = 0x4, DATA = 0x00012
+1518: 0xfffff960001d08ba add rax, 0x2b
+------Data-flow dependency originated from line 1504 is used: rax
+1519: 0xfffff960001d08be lea rax, ptr [rdi+rax*8]
+------Removing data-flow dependency: rax
+----------------------------STOP ANALYZING KDF, ADDRESS: 0x7f663cfe140
